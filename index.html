@@ -20,16 +20,23 @@
 
     .player-container {
       width: 100%;
-      max-width: 900px;
+      /* ALTERAÇÃO AQUI:
+         Mudei de 900px para 450px. 
+         Como o vídeo é vertical, limitar a largura força a altura a diminuir proporcionalmente,
+         fazendo caber na tela sem precisar tirar o zoom.
+      */
+      max-width: 450px; 
       background: white;
       padding: 20px;
       border-radius: 14px;
       box-shadow: 0 6px 25px rgba(0,0,0,0.12);
     }
 
+    /* Garante que o vídeo respeite a largura do container */
     video.video-js {
       width: 100% !important;
       height: auto !important;
+      border-radius: 8px; /* Adicionei uma borda suave no vídeo para ficar bonito */
     }
   </style>
 </head>
@@ -38,7 +45,7 @@
 <div class="player-container">
   <video
     id="videoPlayer"
-    class="video-js vjs-default-skin"
+    class="video-js vjs-default-skin vjs-big-play-centered" 
     controls
     preload="auto"
     data-setup="{}"
